@@ -47,7 +47,7 @@ const singerStyle = {
 
 
 // 2. Create Component, return HTML from a component.
-function App() {
+/* function App() {
   return (
     <div className="App">
       <Person></Person>
@@ -57,7 +57,8 @@ function App() {
   )
 }
 
-function Person() {
+function Person(props) {
+  console.log(props)
   return (
     <div className='person'>
       <h1>Hello bro</h1>
@@ -71,6 +72,44 @@ function Friend(){
     <div className='container'>
       <h1>Name: Ajay Devgun</h1>
       <p>Job: Fight</p>
+    </div>
+  )
+} */
+
+
+
+// 3. Pass dynamic data to components, props in react
+function App() {
+  return (
+    <div className="App">
+      <Person name='Rubel' naika='katrina'></Person>
+      <Person name='Bapparaz' naika='alia bhat'></Person>
+      <Person name='Kuber' naika='kopila'></Person>
+      <h5>New Component</h5>
+      <Friend movie='Singham' phone='031569852'></Friend>
+      <Friend phone='019855558'></Friend>
+      <Friend></Friend>
+    </div>
+  )
+}
+
+function Person(props) {
+  // console.log(props)
+  return (
+    <div className='person'>
+      <h1>{props.name}</h1>
+      <p>Naika: {props.naika}</p>
+    </div>
+  )
+}
+
+function Friend(props){
+  console.log(props)
+  return (
+    <div className='container'>
+      <h1>Name: Ajay Devgun</h1>
+      <p>Phone: {props.phone}</p>
+      <p>Movie: {props.movie}</p>
     </div>
   )
 }
