@@ -1,9 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
 
-const name = 'Alex'
-const singer = { name: 'Dr. Mahfuz', job: 'Singer' }
-const singer2 = { name: 'Eva Rahman', job: 'Fimale Singer' }
+//  fro 1
+// const name = 'Alex'
+// const singer = { name: 'Dr. Mahfuz', job: 'Singer' }
+// const singer2 = { name: 'Eva Rahman', job: 'Fimale Singer' }
 
 const singerStyle = {
   color: 'yellow',
@@ -79,7 +80,7 @@ function Friend(){
 
 
 // 3. Pass dynamic data to components, props in react
-function App() {
+/* function App() {
   return (
     <div className="App">
       <Person name='Rubel' naika='katrina'></Person>
@@ -112,6 +113,65 @@ function Friend(props){
       <p>Movie: {props.movie}</p>
     </div>
   )
+} */
+
+
+
+// 3. Create multiple components from an array of objects
+const singers = [
+  { name: 'Dr. Mahfuz', job: 'Singer' },
+  { name: 'Eva Rahman', job: 'Fimale Singer' },
+  { name: 'Agun', job: 'Shopno' },
+  { name: 'Shuvro', job: 'Pathor' }
+]
+
+function App() {
+  const nayoks = ['Rubel', 'Bapparaj', 'Kuber', 'Jashim', 'Salman Shah', 'Riyaz', 'Razzak', 'Anwar']
+  return (
+    <div className="App">
+      {
+        nayoks.map(nayok => <div className='container'> <li>{nayok}</li> </div>)
+      }
+
+      {
+        nayoks.map(nayok => <Person name={nayok}></Person>)
+      }
+
+      {
+        singers.map(singer => <Person name={singer.name}></Person>)
+      }
+
+      {/* <Person name={nayoks[0]} naika='katrina'></Person>
+      <Person name={nayoks[1]} naika='alia bhat'></Person>
+      <Person name={nayoks[2]} naika='kopila'></Person> */}
+      <h5>New Component</h5>
+      <Friend movie='Singham' phone='031569852'></Friend>
+      <Friend phone='019855558'></Friend>
+      <Friend></Friend>
+    </div>
+  )
 }
+
+function Person(props) {
+  // console.log(props)
+  return (
+    <div className='person'>
+      <h1>{props.name}</h1>
+      <p> {props.naika}</p>
+    </div>
+  )
+}
+
+function Friend(props) {
+  // console.log(props)
+  return (
+    <div className='container'>
+      <h1>Name: Ajay Devgun</h1>
+      <p>Phone: {props.phone}</p>
+      <p>Movie: {props.movie}</p>
+    </div>
+  )
+}
+
 export default App;
 
