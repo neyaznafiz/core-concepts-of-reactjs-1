@@ -7,12 +7,13 @@ const singer2 = { name: 'Eva Rahman', job: 'Fimale Singer' }
 
 const singerStyle = {
   color: 'yellow',
-  backgroundColor:'gray',
+  backgroundColor: 'gray',
   padding: '10px',
   borderRadius: '10px'
 }
 
-function App() {
+// 1. html css code add concept
+/* function App() {
   return (
     <div className="App">
 
@@ -42,6 +43,36 @@ function App() {
       
     </div>
   );
+} */
+
+
+// 2. Create Component, return HTML from a component.
+function App() {
+  return (
+    <div className="App">
+      <Person></Person>
+      <h5>New Component</h5>
+      <Friend></Friend>
+    </div>
+  )
 }
 
+function Person() {
+  return (
+    <div className='person'>
+      <h1>Hello bro</h1>
+      <p>Profession: Cricketer</p>
+    </div>
+  )
+}
+
+function Friend(){
+  return (
+    <div className='container'>
+      <h1>Name: Ajay Devgun</h1>
+      <p>Job: Fight</p>
+    </div>
+  )
+}
 export default App;
+
